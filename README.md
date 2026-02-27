@@ -7,7 +7,7 @@
 [![CI](https://github.com/tirth8205/code-review-graph/actions/workflows/ci.yml/badge.svg)](https://github.com/tirth8205/code-review-graph/actions/workflows/ci.yml)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg?style=flat-square)](https://www.python.org/)
 [![MCP](https://img.shields.io/badge/MCP-compatible-green.svg?style=flat-square)](https://modelcontextprotocol.io/)
-[![v1.5.0](https://img.shields.io/badge/version-1.5.0-purple.svg?style=flat-square)](#)
+[![v1.5.3](https://img.shields.io/badge/version-1.5.3-purple.svg?style=flat-square)](#)
 
 ---
 

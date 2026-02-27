@@ -1,6 +1,9 @@
 # Features
 
-## v1.5.0 (Current)
+## v1.5.3 (Current)
+- **Spaces-in-path handling**: `init` auto-creates symlinks when project paths contain spaces (macOS iCloud, etc.)
+- **No git required**: `build`, `status`, `visualize`, `watch` now work on any directory without git
+- **Plugin ready**: Skills registered in plugin.json, SKILL.md frontmatter fixed
 - **File organization**: Generated files moved into `.code-review-graph/` directory (auto-created `.gitignore`, legacy migration)
 - **Visualization density**: Starts collapsed (File nodes only), search bar, clickable edge type toggles, scale-aware layout for large graphs
 - **Project cleanup**: Removed redundant `references/`, `agents/`, `settings.json`

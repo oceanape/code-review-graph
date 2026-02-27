@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.3] - 2026-02-27
+
+### Fixed
+- `init` now auto-creates symlinks when paths contain spaces (macOS iCloud, OneDrive, etc.)
+- `build`, `status`, `visualize`, `watch` work without a git repository (falls back to cwd)
+- Skills discoverable via plugin.json (`name` field added to SKILL.md frontmatter)
+
 ## [1.5.0] - 2026-02-26
 
 ### Added

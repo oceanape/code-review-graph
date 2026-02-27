@@ -2,6 +2,11 @@
 
 ## Shipped
 
+### v1.5.3
+- `init` auto-handles spaces in paths (macOS iCloud, OneDrive, etc.)
+- Works without git — `build`, `status`, `visualize`, `watch` fall back to cwd
+- Skills registered in plugin.json for Claude Code plugin discovery
+
 ### v1.5.0
 - Generated files organized into `.code-review-graph/` directory (auto-gitignored, legacy migration)
 - Visualization density: collapsed start, search, edge toggles, scale-aware layout
@@ -25,7 +30,7 @@
 ### v1.1.0
 - Watch mode, vector embeddings, 12+ languages verified
 
-## v1.5 (Planned)
+## v1.6 (Planned)
 - Auto-generated Mermaid diagrams in review output
 - Public API change detection (breaking change warnings)
 - Configurable review depth per-project
