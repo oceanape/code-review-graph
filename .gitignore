@@ -28,6 +28,9 @@ env/
 *.swo
 *~
 
+# Diagrams (article assets)
+diagrams/
+
 # OS
 .DS_Store
 Thumbs.db
