@@ -25,15 +25,25 @@ Claude Code re-reads your entire codebase on every task. `code-review-graph` fix
 
 ## Quick Start
 
-**Claude Code Plugin** (recommended)
-
+**Claude Code**
 ```bash
 claude plugin marketplace add tirth8205/code-review-graph
 claude plugin install code-review-graph@code-review-graph
 ```
 
-**pip**
+**Gemini CLI**
+```bash
+# Gemini CLI automatically detects the graph via GEMINI.md
+python -m code_review_graph build
+```
 
+**Cursor AI**
+```bash
+# Cursor uses the .cursorrules file in this repo
+# Simply ask Cursor: "Build the graph for this project"
+```
+
+**pip**
 ```bash
 pip install code-review-graph
 code-review-graph install
@@ -51,7 +61,18 @@ The initial build takes ~10 seconds for a 500-file project. After that, the grap
 
 ---
 
-## How It Works
+## Multi-Agent Support
+
+`code-review-graph` is designed to be the central "Knowledge Base" for all your AI coding assistants.
+
+| Agent | Integration Method | Key Benefit |
+|-------|--------------------|-------------|
+| **Claude Code** | MCP Server & Plugin | Native slash commands and automated tool use. |
+| **Gemini CLI** | `GEMINI.md` & Skills | 1M+ token context with structural graph precision. |
+| **Cursor AI** | `.cursorrules` | Integrated Composer and Chat with graph-aware reasoning. |
+| **Github Copilot** | CLI Tools | Manual context injection via `code-review-graph tools`. |
+
+---
 
 Your repository is parsed into an AST with Tree-sitter, stored as a graph of nodes (functions, classes, imports) and edges (calls, inheritance, test coverage), then queried at review time to compute the minimal set of files Claude needs to read.
 

@@ -1,0 +1,30 @@
+# Code Review Graph - Cursor Rules
+
+You are an AI developer with access to a localized Knowledge Graph of this codebase.
+
+## The Graph System
+- **Database**: Located at `graph.db` (SQLite).
+- **Schema**: Defined in `docs/schema.md`.
+- **CLI Tool**: Use `python -m code_review_graph` to interact with the graph.
+
+## Custom Commands (Tools)
+When you need to understand dependencies or impact, use these terminal commands:
+
+1. **Query the Graph**: 
+   `python -m code_review_graph tools query "SELECT ... FROM nodes/edges"`
+2. **Blast Radius**: 
+   `python -m code_review_graph tools blast-radius --file <path> --line <num>`
+   *Use this before any major refactoring to see downstream impacts.*
+3. **Find Related Tests**:
+   `python -m code_review_graph tools find-tests --file <path>`
+   *Use this to identify which tests must run for a specific change.*
+
+## Rules for Cursor AI
+- **Context First**: Before answering complex architectural questions, query the graph to find call hierarchies.
+- **Verification**: After modifying code, check if any `INHERITS` or `CALLS` relationships are broken by re-running the graph builder: `python -m code_review_graph build --incremental`.
+- **Refactoring**: Always check the "Blast Radius" of a function before renaming or moving it.
+- **Onboarding**: If a user asks "How does X work?", use the graph to find the `CONTAINS` hierarchy of the relevant file.
+
+## Mapping
+- **Nodes**: Files, Classes, Functions, Types.
+- **Edges**: CALLS, IMPORTS_FROM, INHERITS, IMPLEMENTS, CONTAINS, TESTED_BY.
